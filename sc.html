@@ -1,83 +1,124 @@
-
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>高考倒计时</title>
-<meta name="viewport" content="target-densitydpi=device-dpi, width=1000px, user-scalable=no" />
-<style type="text/css"> 
-.jsfont{
-    font-size: 2rem;
-    text-align: right;
-    color: rgb(228, 65, 97);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-.jsTitlfont{
-    font-size:4ex;
-    color:rebeccapurple;
-    text-shadow:2px 1px 3px #000 ;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-.roundZoneDark {
-  font-size:5rem;
-	color:
-	rgb(220, 32, 32);
-  background-color: rgba(219, 120, 120, 0.121);
-  text-shadow:2px 1px 3px #000 ;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	-moz-border-radius: 15px;      /* Gecko browsers */
-	-webkit-border-radius: 15px;   /* Webkit browsers */
-	border-radius:15px;            /* W3C syntax */
-  box-shadow:5px 2px 6px #000  ;
-	}
-.bg{
-    width:100%;
-    height:100%;
-    position: relative;
-    background-color: rgb(228, 219, 219);
-    padding:1px;
-    box-sizing:border-box;
-    z-index:1;
-}
-.bg:after{
-    content: "";
-    width:100%;
-    height:100%;
-    position: absolute;
-    left:0;
-    top:0;
-    background: inherit;
-    filter: blur(2px);
-    z-index: 2;
-}
-.drag{
-    position: absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-    width:200px;
-    height:200px;
-    text-align: center;
-
-    z-index:11;
-}
-
-</style>
-
+<head>
+  <title>课程表</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
 <body>
-    <div >
-    <h1 class="jsfont"><strong>周五</strong></h1>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';"><span style="color: #df8320;"><strong>语文</strong></span></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆'"><span style="color: #df8320;"><strong>英语</strong></span></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';color: rgb(32, 153, 54);"><strong>语文</strong></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';color: rgb(32, 153, 54);"><strong>数学</strong></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';color: rgb(32, 153, 54);"><strong>英语</strong></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';color: rgb(32, 153, 54);"><strong>物理</strong></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';color: rgb(32, 153, 54);"><strong>化学</strong></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆'"><span style="color: #ff6600;"><strong>数学</strong></span></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';color: rgb(32, 153, 54);"><strong>语文</strong></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';color: rgb(32, 153, 54);"><strong>数学</strong></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';color: rgb(32, 153, 54);"><strong>自习</strong></p>
-    <p style="text-align: right;-webkit-app-region:drag;font-family:'幼圆';color: rgb(32, 153, 54);"><strong>体活</strong></p>
-    <p>&nbsp;</p>
-
+<style>
+.contact{
+  font-size: 40;
+  font-family: "幼圆";
+}
+</style>
+<div class="main" align="right">
+    <div class = "contact">
+      {{m.p1}}<br>
+      {{m.p2}}<br>
+      {{m.m1}}<br>
+      {{m.m2}}<br>
+      {{m.m3}}<br>
+      {{m.m4}}<br>
+      {{m.m5}}<br>
+      {{m.w1}}<br>
+      {{m.m6}}<br>
+      {{m.m7}}<br>
+      {{m.m8}}<br>
+      {{m.m9}}<br>
+      
+    </div>
+  </div>
 </body>
+
+
+
+<script>
+var vm = new Vue(
+{
+  el:".contact",
+  data:{
+    m:get_lessions(),
+  }
+}
+)
+function get_lessions(){
+  switch(new Date().getDay()){
+    case 1:
+      return {
+    p1:"语文",
+    p2:"数学",
+    m1:"语文",
+    m2:"数学",
+    m3:"数学",
+    m4:"数学",
+    m5:"数学",
+    w1:"大扫除",
+    m6:"数学",
+    m7:"数学",
+    m8:"数学",
+    m9:"数学",
+  };
+    case 2:
+      return {
+    p1:"语文",
+    p2:"数学",
+    m1:"语文",
+    m2:"数学",
+    m3:"数学",
+    m4:"数学",
+    m5:"数学",
+    w1:"大扫除",
+    m6:"数学",
+    m7:"数学",
+    m8:"数学",
+    m9:"数学",
+  };
+    case 3:
+      return {
+    p1:"语文",
+    p2:"数学",
+    m1:"语文",
+    m2:"数学",
+    m3:"数学",
+    m4:"数学",
+    m5:"数学",
+    w1:"大扫除",
+    m6:"数学",
+    m7:"数学",
+    m8:"数学",
+    m9:"数学",
+  };
+    case 4:
+      return {
+    p1:"语文",
+    p2:"数学",
+    m1:"语文",
+    m2:"数学",
+    m3:"数学",
+    m4:"数学",
+    m5:"数学",
+    w1:"大扫除",
+    m6:"数学",
+    m7:"数学",
+    m8:"数学",
+    m9:"数学",
+  };
+    case 5:
+      return {
+    p1:"语文",
+    p2:"数学",
+    m1:"语文",
+    m2:"数学",
+    m3:"数学",
+    m4:"数学",
+    m5:"数学",
+    w1:"大扫除",
+    m6:"数学",
+    m7:"数学",
+    m8:"数学",
+    m9:"数学",
+  };
+  }
+
+}
+</script>
 </html>
